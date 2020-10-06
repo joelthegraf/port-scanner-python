@@ -23,7 +23,7 @@ def scanPorts(fromport, toport, hostaddr, timeout):
         sys.exit()
 
     except socket.error:
-        print("An error occured - Scan stopped")
+        print("An error occurred - Scan stopped")
         sys.exit()
 
 
@@ -81,7 +81,7 @@ if __name__ == "__main__":
 
             print("-" * 60)
             print(scanner)
-            print("Scanning from port {} to port {}. This could take a moment".format(fromport, toport))
+            print("Scanning from port {} to port {}. This could take a moment.".format(fromport, toport))
             print("-" * 60)
             scanPorts(fromport, toport, hostaddr, timeout)
         else:
