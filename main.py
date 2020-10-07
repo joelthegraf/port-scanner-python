@@ -48,42 +48,46 @@ if __name__ == "__main__":
     print("Options:")
     print("1) Scan default port range (0 - 1023) of an host")
     print("2) Scan custom port range (from - to) of an host")
-    option = input("Pick an option > ")
-    picking = True
-    while picking:
-        if option == "1":
-            picking = False
-            os.system("cls")
+    try:
+        option = input("Pick an option > ")
+        picking = True
+        while picking:
+            if option == "1":
+                picking = False
+                os.system("cls")
 
-            print("-" * 60)
-            print(scanner)
-            print("-" * 60)
-            hostaddr = input("Host > ")
-            timeout = input("Timeout > ")
-            os.system("cls")
+                print("-" * 60)
+                print(scanner)
+                print("-" * 60)
+                hostaddr = input("Host > ")
+                timeout = input("Timeout > ")
+                os.system("cls")
 
-            print("-" * 60)
-            print(scanner)
-            print("-" * 60)
-            scanDefaultPorts(hostaddr, timeout)
-        elif option == "2":
-            picking = False
-            os.system("cls")
+                print("-" * 60)
+                print(scanner)
+                print("-" * 60)
+                scanDefaultPorts(hostaddr, timeout)
+            elif option == "2":
+                picking = False
+                os.system("cls")
 
-            print("-" * 60)
-            print(scanner)
-            print("-" * 60)
-            fromport = input("From Port > ")
-            toport = input("To Port > ")
-            hostaddr = input("Host > ")
-            timeout = input("Timeout > ")
-            os.system("cls")
+                print("-" * 60)
+                print(scanner)
+                print("-" * 60)
+                fromport = input("From Port > ")
+                toport = input("To Port > ")
+                hostaddr = input("Host > ")
+                timeout = input("Timeout > ")
+                os.system("cls")
 
-            print("-" * 60)
-            print(scanner)
-            print("Scanning from port {} to port {}. This could take a moment.".format(fromport, toport))
-            print("-" * 60)
-            scanPorts(fromport, toport, hostaddr, timeout)
-        else:
-            print("Not an valid option")
-            option = input("Pick an option or exit (CTRL+C) > ")
+                print("-" * 60)
+                print(scanner)
+                print("Scanning from port {} to port {}. This could take a moment.".format(fromport, toport))
+                print("-" * 60)
+                scanPorts(fromport, toport, hostaddr, timeout)
+            else:
+                print("Not an valid option")
+                option = input("Pick an option or exit (CTRL+C) > ")
+    except KeyboardInterrupt:
+        print("\nCTRL+C was pressed - Scan stopped")
+        sys.exit()
