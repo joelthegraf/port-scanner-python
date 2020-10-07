@@ -15,15 +15,15 @@ def scanPorts(fromport, toport, hostaddr, timeout):
             tcpSocket.close()
 
     except KeyboardInterrupt:
-        print("CTRL+C was pressed - Scan stopped")
+        print("\nCTRL+C was pressed - Scan stopped")
         sys.exit()
 
     except socket.gaierror:
-        print("Given hostname is invalid - Scan stopped")
+        print("\nGiven hostname is invalid - Scan stopped")
         sys.exit()
 
     except socket.error:
-        print("An error occurred - Scan stopped")
+        print("\nAn error occurred - Scan stopped")
         sys.exit()
 
 
